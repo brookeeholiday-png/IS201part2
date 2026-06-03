@@ -121,6 +121,34 @@
             color: var(--rust);
         }
 
+        nav a.preview {
+            position: relative;
+        }
+
+        nav a.preview::after {
+            content: "Play Flappy Boxfish";
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%) translateY(8px);
+            white-space: nowrap;
+            background: rgba(255, 255, 255, 0.96);
+            border: 1px solid var(--rule);
+            border-radius: 999px;
+            padding: 0.4rem 0.85rem;
+            font-size: 0.78rem;
+            color: var(--muted);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            z-index: 10;
+        }
+
+        nav a.preview:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(14px);
+        }
+
         .button {
             display: inline-flex;
             align-items: center;
