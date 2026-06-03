@@ -62,7 +62,7 @@
     </ul>
 
     <div class="section-actions">
-        <a class="button secondary" href="#scuba">Learn more about Scuba Diving</a>
+        <a class="button secondary" href="scuba.html">Learn more about Scuba Diving</a>
     </div>
 </section>
 
@@ -126,18 +126,5 @@
 
 </main>
 
-<script>
-    function revealScubaSection() {
-        var scubaSection = document.getElementById('scuba');
-        if (!scubaSection) return;
-        if (window.location.hash === '#scuba') {
-            scubaSection.classList.remove('hidden-section');
-            scubaSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    }
-
-    window.addEventListener('load', revealScubaSection);
-    window.addEventListener('hashchange', revealScubaSection);
-</script>
 </body>
 </html>

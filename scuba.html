@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brooke Holiday — Scuba Diving</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles/styles.css">
+  <style>
+    :root {
+      color-scheme: light;
+      --cream: #e8f1f8;
+      --ink: #1f3148;
+      --sand: #c5d5e3;
+      --rust: #7095b8;
+      --muted: #6c7f93;
+      --rule: #b8c7d4;
+      --bg: var(--cream);
+      --surface: #ffffff;
+      --surface-strong: #eaf3f9;
+      --text: var(--ink);
+      --border: rgba(184, 199, 212, 0.7);
+      --radius: 22px;
+      --shadow: 0 20px 48px rgba(20, 23, 26, 0.08);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 3rem;
+      background: var(--cream);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .site-nav .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      letter-spacing: .06em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 2.4rem; list-style: none; }
+
+    .nav-links a {
+      font-size: .82rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--rust); }
+
+    #scuba-content {
+      padding: 7rem 3rem 8rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.4rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1.3rem;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .divesite {
+      margin-bottom: 2rem;
+      padding: 1.4rem;
+      border-radius: 12px;
+      background: var(--surface-strong);
+      border: 1px solid var(--rule);
+    }
+
+    .divesite h3 {
+      font-family: 'Playfair Display', serif;
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+    }
+
+    .dive-image {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .video-section {
+      margin-top: 3rem;
+      padding: 2rem 1.4rem;
+      background: var(--surface-strong);
+      border-radius: 12px;
+      border: 1px solid var(--rule);
+    }
+
+    .video-section h2 {
+      margin-top: 0;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .button.secondary {
+      display: inline-block;
+      margin-top: 1.4rem;
+      padding: .8rem 2rem;
+      background: var(--sand);
+      color: var(--ink);
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .9rem;
+      transition: background .2s;
+    }
+
+    .button.secondary:hover {
+      background: var(--rust);
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .site-nav { padding: 1rem 1.4rem; }
+      #scuba-content { padding: 5rem 1.4rem 5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav class="site-nav">
+    <a href="mwebsite.html" class="logo">B.E. Holiday</a>
+    <ul class="nav-links">
+      <li><a href="mwebsite.html">Home</a></li>
+      <li><a href="#scuba-content" class="active">Scuba</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Scuba Content ── -->
+  <section id="scuba-content">
+    <h1>Scuba Diving</h1>
+    
+    <p>
+      I first scuba dived when I was eleven. Last year I completed my Divemaster certification, including rescue training.
+      I love guiding dives and sharing the underwater world with others. My favorite sea animal is the juvenile boxfish!
+    </p>
+
+    <p>
+      <a class="button secondary" href="Game.html">Flappy Boxfish Game</a>
+    </p>
+
+    <h2>Best Dive Sites in Gili Air</h2>
+
+    <div class="divesite">
+      <h3>Halik Reef</h3>
+      <p>Baby white tip reef sharks in the shallows and rays in deeper water.</p>
+      <img class="dive-image" src="Paint.jpeg" alt="Halik Reef">
+    </div>
+
+    <div class="divesite">
+      <h3>Secret Gardens</h3>
+      <p>Beautiful coral formations and occasional eagle rays.</p>
+      <img class="dive-image" src="Ray.jpeg" alt="Secret Gardens">
+    </div>
+
+    <div class="divesite">
+      <h3>Shark Point</h3>
+      <p>
+        Advanced dive with a shipwreck at 30 meters. Strong currents, but incredible marine life:
+        sharks, turtles, cuttlefish, and rays.
+      </p>
+      <img class="dive-image" src="shark_point.jpeg" alt="Shark Point">
+    </div>
+
+    <div class="divesite">
+      <h3>Night Dive at Hans Reef</h3>
+      <p>
+        A must-do experience. See eels, octopus hunting, squid, nudibranchs,
+        and bioluminescent plankton.
+      </p>
+      <img class="dive-image" src="hans.jpeg" alt="Night Dive at Hans Reef">
+    </div>
+
+    <!-- ── Video Section ── -->
+    <div class="video-section">
+      <h2>Scuba in Action</h2>
+      <p>Raja Ampat, Indonesia:</p>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/2zjay86tz_0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p style="font-size: 0.9rem; margin-top: 1rem; color: var(--muted);">Bucket-list dive sites!</p>
+    </div>
+
+    <div style="margin-top: 3rem; text-align: center;">
+      <a class="button secondary" href="mwebsite.html">Return Home</a>
+    </div>
+  </section>
+
+</body>
+</html>
