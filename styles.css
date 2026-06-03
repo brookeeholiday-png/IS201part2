@@ -1,0 +1,298 @@
+
+        :root {
+            color-scheme: light;
+            --cream: #e8f1f8;
+            --ink: #1f3148;
+            --sand: #c5d5e3;
+            --rust: #7095b8;
+            --muted: #6c7f93;
+            --rule: #b8c7d4;
+            --bg: var(--cream);
+            --surface: #ffffff;
+            --surface-strong: #eaf3f9;
+            --text: var(--ink);
+            --border: rgba(184, 199, 212, 0.7);
+            --radius: 22px;
+            --shadow: 0 20px 48px rgba(20, 23, 26, 0.08);
+        }
+
+        header {
+            padding: 40px 18px;
+            background: none;
+            color: var(--text);
+        }
+
+        .hero {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 12px 6px;
+        }
+
+        .hero-image {
+            flex: 0 0 320px;
+            height: 520px;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: var(--surface-strong);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+            background: var(--surface-strong);
+        }
+
+        .hero-content {
+            flex: 1 1 auto;
+            text-align: left;
+        }
+
+        .eyebrow {
+            color: var(--muted);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            margin: 0 0 8px 0;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .hero-content h1 {
+            margin: 0 0 8px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.4rem, 4vw, 3.4rem);
+            color: var(--text);
+        }
+
+        .subheader {
+            margin: 0 0 18px 0;
+            color: var(--muted);
+            font-size: 1.02rem;
+        }
+
+        .hero-actions {
+            margin-top: 12px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        .section-actions {
+            margin-top: 24px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            padding: 24px 16px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: var(--rust);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        nav a {
+            color: var(--ink);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.02rem;
+            letter-spacing: 0.02em;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--rust);
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.95rem 1.5rem;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .button.primary {
+            color: #fff;
+            background: var(--rust);
+            border-color: var(--rust);
+        }
+
+        .button.primary:hover {
+            background: #9ccee9;
+        }
+
+        .button.secondary {
+            color: var(--ink);
+            background: var(--sand);
+            border-color: var(--border);
+        }
+
+        .button.secondary:hover {
+            background: var(--surface-strong);
+        }
+
+        .hidden-section {
+            display: none;
+        }
+
+        main {
+            max-width: 960px;
+            margin: 0 auto 64px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 36px 36px 30px;
+            margin: 32px 0;
+        }
+
+        section:first-of-type {
+            margin-top: 40px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: var(--text);
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.75rem, 2.2vw, 2.3rem);
+            letter-spacing: -0.04em;
+        }
+
+        h3, h4 {
+            color: var(--ink);
+            margin-bottom: 12px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 0 0 1.3rem;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 1.3rem;
+            color: var(--muted);
+        }
+
+        li {
+            margin-bottom: 0.9rem;
+        }
+
+        .divesite {
+            margin-bottom: 28px;
+            padding: 18px 20px;
+            border-radius: 18px;
+            background: var(--surface-strong);
+            border: 1px solid rgba(29, 77, 143, 0.08);
+        }
+
+        .dive-image {
+            width: 100%;
+            margin-top: 18px;
+            border-radius: 20px;
+            display: block;
+            object-fit: cover;
+            max-height: 320px;
+        }
+
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 34px;
+            align-items: start;
+            margin-top: 24px;
+        }
+
+        .hobbies-text ul {
+            margin: 0;
+            padding-left: 1.3rem;
+            color: var(--muted);
+        }
+
+        .hobbies-image-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hobbies-image {
+            width: 100%;
+            max-width: 420px;
+            height: auto;
+            border-radius: 22px;
+            box-shadow: var(--shadow);
+            display: block;
+            object-fit: cover;
+        }
+
+        .contact-card {
+            padding: 30px 28px;
+            border-radius: 24px;
+            background: #f7f9fd;
+            border: 1px solid rgba(29, 77, 143, 0.1);
+            display: grid;
+            gap: 16px;
+        }
+
+        .contact-card h2 {
+            margin-top: 0;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .contact-meta {
+            color: var(--muted);
+            font-size: 0.99rem;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 48px 16px 36px;
+            }
+
+            nav {
+                gap: 12px;
+                padding: 18px 12px;
+            }
+
+            section {
+                padding: 28px 20px 24px;
+            }
+        }

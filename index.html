@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brooke Holiday</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    
+</head>
+
+<body>
+
+<header>
+    <div class="hero">
+        <div class="hero-image">
+            <img src="Picture.jpeg" alt="Brooke Holiday">
+        </div>
+        <div class="hero-content">
+            <p class="eyebrow">Meet</p>
+            <h1>Brooke Holiday</h1>
+            <p class="subheader">Brigham Young University Class of 2029
+            <div class="hero-actions">
+                <a class="button primary" href="#hobbies">Interests</a>
+                <a class="button secondary connect" href="#contact">Connect</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <a href="#about">About Me</a>
+    <a href="#hobbies">Hobbies</a>
+    <a href="#scuba"> Game</a>
+</nav>
+
+<main>
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        <p>
+  Hi! I am Brooke Holiday. I grew up in Wyoming, Colorado, and California. I have four older sister and a little brother and am an aunt to four nibings! I am entering my
+  sophmore year at Brigham Young University, where I plan to major in finance and will be recruiting for investment banking this fall.
+</p>
+    </p>
+</section>
+
+<section id="hobbies">
+    <h2>Hobbies</h2>
+    <p>
+        I love doing anything outdoors. Growing up near Yellowstone National Park inspired me to visit all U.S. national parks.
+        My favorite natinal park is Yosemite, which I saw during Firefall, and hope to return to hike Half Dome.
+    </p>
+
+    <ul>
+        <li>Watercolor painting and sketching</li>
+        <li>Photography</li>
+        <li>Hunting</li>
+        <li>Scuba diving</li>
+    </ul>
+
+    <div class="section-actions">
+        <a class="button secondary" href="#scuba">Learn more about Scuba Diving</a>
+    </div>
+</section>
+
+<section id="scuba" class="hidden-section">
+    <h2>Scuba Diving</h2>
+    <p>
+        I first scuba dived when I was eleven. Last year I completed my Divemaster certification, including rescue training.
+        I love guiding dives and sharing the underwater world with others. My favorite sea animal is the juivinelle boxfish! So I made this game:
+    </p>
+    <p>
+        <a class="button secondary" href="Game.html">Flappy Boxfish</a>
+    </p>
+
+    <h3>Best Dive Sites in Gili Air</h3>
+
+    <div class="divesite">
+        <h4>Halik Reef</h4>
+        <p>Baby white tip reef sharks in the shallows and rays in deeper water.</p>
+        <img class="dive-image" src="Paint.jpeg" alt="Halik Reef">
+    </div>
+
+    <div class="divesite">
+        <h4>Secret Gardens</h4>
+        <p>Beautiful coral formations and occasional eagle rays.</p>
+        <img class="dive-image" src="Ray.jpeg" alt="Secret Gardens">
+    </div>
+
+    <div class="divesite">
+        <h4>Shark Point</h4>
+        <p>
+            Advanced dive with a shipwreck at 30 meters. Strong currents, but incredible marine life:
+            sharks, turtles, cuttlefish, and rays.
+        </p>
+        <img class="dive-image" src="shark_point.jpeg" alt="Shark Point">
+    </div>
+
+    <div class="divesite">
+        <h4>Night Dive at Hans Reef</h4>
+        <p>
+            A must-do experience. See eels, octopus hunting, squid, nudibranchs,
+            and bioluminescent plankton.
+        </p>
+        <img class="dive-image" src="hans.jpeg" alt="Night Dive at Hans Reef">
+    </div>
+
+</section>
+
+<section id="contact">
+    <div class="contact-card">
+        <h2>Contact</h2>
+        <p class="contact-meta">
+            Email: <a href="mailto:brookeeholiday@gmail.com">brookeeholiday@gmail.com</a><br>
+            Phone: <a href="tel:+13072501909">+1 (307) 250-1909</a>
+        </p>
+        <div class="contact-links">
+            <a class="button primary" href="resume.html" target="_blank" rel="noopener noreferrer">View Resume</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/brooke-holiday-267a07388/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<script>
+    function revealScubaSection() {
+        var scubaSection = document.getElementById('scuba');
+        if (!scubaSection) return;
+        if (window.location.hash === '#scuba') {
+            scubaSection.classList.remove('hidden-section');
+            scubaSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    window.addEventListener('load', revealScubaSection);
+    window.addEventListener('hashchange', revealScubaSection);
+</script>
+</body>
+</html>

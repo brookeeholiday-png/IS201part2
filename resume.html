@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brooke E. Holiday — Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      color-scheme: light;
+      --cream: #e8f1f8;
+      --ink: #1f3148;
+      --sand: #c5d5e3;
+      --rust: #7095b8;
+      --muted: #6c7f93;
+      --rule: #b8c7d4;
+      --bg: var(--cream);
+      --surface: #ffffff;
+      --surface-strong: #eaf3f9;
+      --text: var(--ink);
+      --border: rgba(184, 199, 212, 0.7);
+      --radius: 22px;
+      --shadow: 0 20px 48px rgba(20, 23, 26, 0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+    }
+
+    /* ── NAV LINK (the "separate section" link) ── */
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 3rem;
+      background: var(--cream);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .site-nav .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      letter-spacing: .06em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 2.4rem; list-style: none; }
+
+    .nav-links a {
+      font-size: .82rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--rust); }
+
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 3rem 3rem;
+      text-align: center;
+    }
+
+    .hero-inner h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -.02em;
+    }
+
+    .hero-inner h1 em {
+      font-style: italic;
+      color: var(--rust);
+    }
+
+    .hero-inner p {
+      margin-top: 1.4rem;
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 42ch;
+      margin-inline: auto;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      margin-top: 2.4rem;
+      padding: .8rem 2.2rem;
+      border: 1.5px solid var(--ink);
+      font-size: .8rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      transition: background .2s, color .2s;
+    }
+
+    .hero-cta:hover {
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    /* ── RESUME SECTION ── */
+    #resume {
+      padding: 7rem 3rem 8rem;
+      max-width: 860px;
+      margin-inline: auto;
+    }
+
+    .section-label {
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 2.4rem;
+    }
+
+    /* Header block */
+    .resume-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding-bottom: 1.8rem;
+      border-bottom: 1.5px solid var(--ink);
+      margin-bottom: 3rem;
+    }
+
+    .resume-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .resume-contact {
+      text-align: right;
+      font-size: .84rem;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .resume-contact a { color: var(--rust); text-decoration: none; }
+    .resume-contact a:hover { text-decoration: underline; }
+
+    /* Blocks */
+    .resume-block { margin-bottom: 2.8rem; }
+
+    .block-title {
+      font-size: .7rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: .5rem;
+      margin-bottom: 1.4rem;
+    }
+
+    /* Entry */
+    .entry { margin-bottom: 1.6rem; }
+
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: .3rem;
+      margin-bottom: .2rem;
+    }
+
+    .entry-org {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.02rem;
+      font-weight: 600;
+    }
+
+    .entry-meta {
+      font-size: .78rem;
+      color: var(--muted);
+      letter-spacing: .04em;
+    }
+
+    .entry-role {
+      font-size: .88rem;
+      font-weight: 500;
+      color: var(--rust);
+      margin-bottom: .45rem;
+    }
+
+    .entry ul {
+      padding-left: 1.1rem;
+      list-style: none;
+    }
+
+    .entry ul li {
+      font-size: .87rem;
+      line-height: 1.65;
+      color: #3a3530;
+      position: relative;
+      padding-left: .8rem;
+      margin-bottom: .25rem;
+    }
+
+    .entry ul li::before {
+      content: '—';
+      position: absolute;
+      left: -0.9rem;
+      color: var(--sand);
+      font-size: .8rem;
+    }
+
+    /* Awards row */
+    .awards-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+    }
+
+    .tag {
+      background: var(--sand);
+      color: var(--ink);
+      font-size: .76rem;
+      letter-spacing: .06em;
+      padding: .3rem .8rem;
+      border-radius: 2px;
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 600px) {
+      .site-nav { padding: 1rem 1.4rem; }
+      #resume { padding: 5rem 1.4rem 5rem; }
+      .resume-contact { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation with link to resume section ── -->
+  <nav class="site-nav">
+    <a href="mwebsite.html" class="logo">B.E. Holiday</a>
+    <ul class="nav-links">
+      <li><a href="mwebsite.html">Home</a></li>
+      <li><a href="#resume" class="active">Resume</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Hero / Home section ── -->
+  <section id="home">
+    <div class="hero-inner fade-in visible">
+      <h1>Brooke E.<br><em>Holiday</em></h1>
+      <p>Pre-Business student at BYU — finance, data analytics, and international operations.</p>
+      <a href="#resume" class="hero-cta">View Résumé ↓</a>
+    </div>
+  </section>
+
+  <!-- ── Resume Section ── -->
+  <section id="resume">
+    <p class="section-label fade-in">Résumé</p>
+
+    <!-- Header -->
+    <div class="resume-header fade-in">
+      <h2>Brooke E.<br>Holiday</h2>
+      <div class="resume-contact">
+        240 Calle Alta, San Clemente, CA 92672<br>
+        (307) 250-1909<br>
+        <a href="mailto:brookeho@byu.edu">brookeho@byu.edu</a>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="resume-block fade-in">
+      <p class="block-title">Education</p>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-org">Brigham Young University</span>
+          <span class="entry-meta">Provo, UT · Expected Apr 2029</span>
+        </div>
+        <p class="entry-role">Pre-Business — GPA 3.83 / 4.00</p>
+        <ul>
+          <li>Honors Program; BYU Academic Scholarship</li>
+          <li>Finance Society · Investment Banking Association · Women in Finance Association</li>
+          <li>9-week Business Fundamentals in Europe study abroad — London, Paris, Rome</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <div class="resume-block fade-in">
+      <p class="block-title">Experience</p>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-org">Brigham Capital (Investment Fund)</span>
+          <span class="entry-meta">Provo, UT · Fall 2026</span>
+        </div>
+        <p class="entry-role">Incoming Analyst</p>
+        <ul>
+          <li>Joining a student-led fund to contribute to equity research and portfolio investment decisions</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-org">September Growth Partners (Search Fund)</span>
+          <span class="entry-meta">New York, NY · Jul – Dec 2026</span>
+        </div>
+        <p class="entry-role">Sourcing Analyst</p>
+        <ul>
+          <li>Executed market research and initial outreach during the search and acquisition phase to identify potential targets</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-org">Indo Ed (Innovative Education JV)</span>
+          <span class="entry-meta">Singapore · Apr 2026 – Present</span>
+        </div>
+        <p class="entry-role">Digital Analyst Intern</p>
+        <ul>
+          <li>Monitor, compile, and summarize reports on partner performance, student progress, and in-app engagement</li>
+          <li>Facilitate data collection for blockchain-backed gamified learning systems including courses and CSR initiatives</li>
+          <li>Clean, validate, and organize operational and educational data to support actionable insights</li>
+          <li>Shadow cross-functional operations and data analytics meetings to understand workflow and decision-making</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-org">BYU Melaleuca Case Competition</span>
+          <span class="entry-meta">Provo, UT · Oct 2025</span>
+        </div>
+        <p class="entry-role">3rd Place Finalist</p>
+        <ul>
+          <li>Developed a strategic product proposal with a team of 4 tailored to Melaleuca's new consumer base</li>
+          <li>Analyzed supply chain logistics and proposed marketing and distribution strategies</li>
+          <li>Presented financial rationale to Melaleuca's Finance Director and Senior Marketing Leadership</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-org">TeachCast Global</span>
+          <span class="entry-meta">Jakarta, Indonesia · Jun – Sep 2025</span>
+        </div>
+        <p class="entry-role">Product Design Intern</p>
+        <ul>
+          <li>Supported distribution of 100,000+ devices to elementary schools throughout Indonesia</li>
+          <li>Assisted in design, production, testing, and international sourcing of English vocabulary devices out of China</li>
+          <li>Applied Adobe design tools to support the product's visual design output</li>
+          <li>Collaborated with international partners including the Salim Group, Indomobil, and Cambridge University Press</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Leadership -->
+    <div class="resume-block fade-in">
+      <p class="block-title">Leadership &amp; Service</p>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-org">Wildlife Conservation</span>
+          <span class="entry-meta">San Clemente, CA · Oct 2024 – May 2025</span>
+        </div>
+        <p class="entry-role">Student Volunteer</p>
+        <ul>
+          <li>Partnered with California Wildlife, Fish &amp; Game to raise and release juvenile white seabass</li>
+          <li>Collected and analyzed data on growth, survival, and environmental conditions</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-org">Earthquake Relief</span>
+          <span class="entry-meta">Lombok, Indonesia · Oct 2018</span>
+        </div>
+        <p class="entry-role">Volunteer</p>
+        <ul>
+          <li>Leveraged local knowledge to deliver aid to remote villages after a 6.9 magnitude earthquake</li>
+          <li>Worked with local authorities and NGOs to assess needs and prioritize relief across the island</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Awards & Interests -->
+    <div class="resume-block fade-in">
+      <p class="block-title">Awards, Skills &amp; Interests</p>
+      <div class="awards-row">
+        <span class="tag">2nd Place — LBO Case Competition</span>
+        <span class="tag">Scuba Divemaster Certified</span>
+        <span class="tag">Track &amp; Field — National Qualifier</span>
+        <span class="tag">Intermediate Bahasa Indonesia</span>
+        <span class="tag">Adobe Creative Suite</span>
+        <span class="tag">Hunting</span>
+        <span class="tag">Painting</span>
+        <span class="tag">Surfing</span>
+        <span class="tag">Videography</span>
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
